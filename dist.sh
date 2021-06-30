@@ -101,7 +101,7 @@ EOF
 if test "$UNLOCKBOOTLOADER" = "true"
 then
 cat >> tmp/$PRODUCT-$VERSION/flash-all.sh << EOF
-fastboot oem unlock
+fastboot flashing unlock
 EOF
 fi
 if test "$ERASEALL" = "true"
@@ -141,7 +141,7 @@ EOF
 if test "$UNLOCKBOOTLOADER" = "true"
 then
 cat >> tmp/$PRODUCT-$VERSION/flash-all.bat << EOF
-fastboot oem unlock
+fastboot flashing unlock
 EOF
 fi
 if test "$ERASEALL" = "true"
