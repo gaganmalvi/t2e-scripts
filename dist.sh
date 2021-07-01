@@ -34,7 +34,7 @@ lunch lineage_${DEVICE}-${VARIANT}
 
 function distpkg() {
 	# Make updatepackage
-	make dist DIST_DIR=$DIST_OP -j32
+	make dist DIST_DIR=$DIST_OP -j32 | tee log.txt
 }
 
 function tgtpkgsign() {
@@ -61,13 +61,8 @@ echo "Signing package - updatepkg"
 img_from_target_files lineage-signed-target_files.zip lineage-$VERSION-$DEVICE-signed-img.zip
 }
 
-distpkg
-tgtpkgsign
-otapkgsign
-imgpkgsign
-
 # Build factory images.
-
+function build_factory_images() {
 # Prepare the staging directory
 rm -rf tmp
 mkdir -p tmp/$PRODUCT-$VERSION
@@ -195,3 +190,10 @@ mv $PRODUCT-$VERSION-factory.zip $PRODUCT-$VERSION-factory-$(sha256sum < $PRODUC
 rm -rf tmp
 
 echo "Package complete."
+}
+
+distpkg
+tgtpkgsign
+otapkgsign
+imgpkgsign
+build_factory_images
