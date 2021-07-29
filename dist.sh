@@ -16,6 +16,7 @@ git clone https://github.com/2e-dev/android_device_teracube_2e device/teracube/2
 git clone https://github.com/AOSPA-2e/android_device_mediatek_sepolicy device/mediatek/sepolicy
 git clone https://github.com/AOSPA-2e/android_kernel_teracube_2e kernel/teracube/2e -b ruby
 git clone https://github.com/2e-dev/android_vendor_teracube_2e vendor/teracube/2e -b lineage-18.1
+git clone https://github.com/2e-dev/android_vendor_teracube_2e-firmware vendor/teracube/2e-firmware -b lineage-18.1
 git clone https://github.com/AOSPA-2e/android_vendor_mediatek_ims vendor/mediatek/ims
 git clone https://github.com/AOSPA-2e/android_vendor_mediatek_opensource vendor/mediatek/opensource
 git clone https://github.com/AOSPA-2e/android_vendor_mediatek_interfaces vendor/mediatek/interfaces
